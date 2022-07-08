@@ -1,0 +1,79 @@
+* {
+    margin: 0;     /*초기화 = 여백 없애기*/
+    padding: 0;
+}
+ul, li {
+    list-style: none; /*none 속성을 주면 글머리표가 없어짐*/
+}
+a {
+    text-decoration: none; /*밑줄 지우기*/
+    color: inherit; /*a태그의 컬러 물려받기*/
+}
+.list_wrap {
+    width: 1200px;                 /*전체 가로길이*/
+    margin: 0 auto;                /*개체가 상위 컨테이너의 중앙에 위치*/
+    padding: 100px;                /*위에서 떨어지기*/
+}
+
+.list_wrap ul {
+    font-size: 0;                  /*아이템(카드) 사이의 여백이 가려진다*/
+}
+.list_wrap .item {
+    display: inline-block;         /*가로로 배치하기*/
+    width: 30%;                    /*가로 길이 줄이기*/
+    margin-top: 40px;              /*위쪽에서 멀어지기*/
+    margin-left: 5%;               /*왼쪽으로 멀어지게 적용*/
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /*x값, y값, 흐려지는 정도(0.5), rgba는 색깔 적용*/
+}
+.list_wrap .item:nth-child(-n+3) { /*1, 2, 3, 번 아이템 들은 위쪽에서 멀어지지 않게 적용*/
+    margin-top: 0;
+}
+.list_wrap .item:nth-child(3n-2) {  /*가장 왼쪽에 있는것(1, 4, 7번 아이템)들은 margin-left가 적용되지 않도록 함*/
+    margin-left: 0;
+}
+.list_wrap .item .image {
+    width: 100%;                    /*가로*/
+    height: 160px;                  /*세로*/
+    background-color: #ddd;       /*백그라운드 컬러*/
+    background-repeat: no-repeat;   /*백그라운드 전체지정*/
+    background-position: 50% 50%;   /*백그라운드 포지션*/
+    background-size: cover;         /*백그라운드 사이즈*/
+}
+
+
+.list_wrap .item1 .image { background-image: url(../img/니플러.jpg); }
+.list_wrap .item2 .image { background-image: url(../img/스우핑이블.jpg); }
+.list_wrap .item3 .image { background-image: url(../img/에럼펀트.jpg); }
+.list_wrap .item4 .image { background-image: url(../img/그래폰.jpg); }
+.list_wrap .item5 .image { background-image: url(../img/빌리위그.jpg); }
+.list_wrap .item6 .image { background-image: url(../img/오캐미.jpg); }
+.list_wrap .item7 .image { background-image: url(../img/데미가이즈.jpg); }
+.list_wrap .item8 .image { background-image: url(../img/보우트러클.jpg); }
+.list_wrap .item9 .image { background-image: url(../img/천둥새.jpg); }
+
+
+.list_wrap .item .cont {
+    padding: 25px;
+}
+.list_wrap .item strong {
+    display: block;         /*Strong 태그는 inline 태그이기 때문에 margin이 적용 X margin값이 적용되도록 함*/
+    margin: 0 0 10px 0;     /*이미지와 제목의 간격 조정*/
+    font-size: 19px;        /*아이템 제목의 크기*/
+    letter-spacing: -1px;   /*아이템 제목의 글자 사이의 간격 줄이기*/
+}
+.list_wrap .item p {        /*p태그*/
+    font-size: 14px;        /*p태그의 글자 크기*/
+    letter-spacing: -1px;   /*p태그의 글자 간격*/
+}
+.list_wrap .item a {        /*a태그*/
+    display: inline-block;  /*위의 내용과 곂치지 않게 설정*/
+    margin-top: 10px;       /*내용과 버튼 사이의 간격*/
+    padding: 5px 10px;      /*상하좌우 여백*/
+    background: #eee;
+    font-size: 13px;        /*a태그 글자 크기*/
+    letter-spacing: -1px;   /*a태그 글자 간격*/
+}
+.list_wrap .item a:hover {  /*마우스 커서를 올렸을때 바뀌는 버튼 색깔 설정*/
+    background: #325cb2;
+    color: #fff;
+}
